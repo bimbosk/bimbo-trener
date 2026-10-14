@@ -55,4 +55,6 @@ Vygenerované výstupy nikdy neupravuj priamo.
 
 ## Dokumentácia
 
-Vlastníka dokumentácie hľadaj cez `docs/DOCUMENTATION_MAP.md`.
+Dokumentáciu neprehľadávaj plošne. Cez `docs/DOCUMENTATION_MAP.md` nájdi
+najužšieho relevantného vlastníka, čítaj postupne a skonči, keď je odpoveď
+jasná.

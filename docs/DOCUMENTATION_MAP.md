@@ -1,8 +1,9 @@
 # Mapa dokumentácie
 
 Začni pri najužšom vlastníkovi relevantnom pre úlohu a hlbšie odkazy otváraj
-iba podľa potreby. Záznam pridaj v tej istej zmene, ktorá vytvára, presúva
-alebo ruší trvalého vlastníka dokumentácie; uvádzaj iba existujúcich vlastníkov.
+iba podľa potreby. Dokumentáciu nečítaj rekurzívne celú. Záznam pridaj v tej
+istej zmene, ktorá vytvára, presúva alebo ruší trvalého vlastníka
+dokumentácie; uvádzaj iba existujúcich vlastníkov.
 
 | Potreba | Kanonický vlastník |
 | --- | --- |
