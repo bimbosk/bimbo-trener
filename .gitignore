@@ -1,0 +1,43 @@
+# Local agent overrides
+AGENTS.override.md
+
+# Environment files and secret-bearing material
+.env
+.env.*
+!.env.example
+!.env.template
+!.env.sample
+*.key
+*.pem
+*.p12
+*.pfx
+*.kdbx
+
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.log
+*.tmp
+
+# Editor and operating-system state
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.kate-swp
+.idea/
+
+# Local agent state. Rulesync-generated projections (CLAUDE.md, AGENTS.md,
+# .claude/skills/, .agents/skills/, ...) are committed, not ignored.
+**/CLAUDE.local.md
+**/AGENTS.local.md
+**/.claude/settings.local.json
+**/.claude/*.lock
+**/.claude/memories/
+**/.agents/memories/
+rulesync.local.jsonc
+.rulesync.local/
+.rulesync/rules/*.local.md
