@@ -22,6 +22,8 @@ dátach.
 
 ## Najbližšie kroky
 
+Zadanie pre implementáciu je v [implementačnom pláne](../../IMPLEMENTATION_PLAN.md).
+
 1. Schéma databázy a import jedného FIT súboru exportovaného z Garmin Connect
    ([import FIT](../coach/fit-import.md)).
 2. Pamäť: tabuľky denníka a stavu, skilly na načítanie a uloženie kontextu

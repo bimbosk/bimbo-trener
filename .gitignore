@@ -44,3 +44,6 @@ rulesync.local.jsonc
 
 # Podklady na analýzu (FIT, exporty, screenshoty) - citlivé dáta, mimo Gitu
 beh/
+
+# Miestny prepis konfigurácie viazaný na počítač
+bimbo-trener.local.json

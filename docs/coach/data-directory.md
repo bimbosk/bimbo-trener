@@ -13,7 +13,8 @@ nástroj ho roznáša na všetky jeho počítače
   runs.sqlite3             databáza (jediný vlastník zapisovaných dát)
   fit\<activity_id>.fit    originálne FIT súbory, jeden na beh, nikdy sa neprepisujú
   fit\manual\              FIT súbory vložené ručne (export z webu, kopírovanie z hodiniek)
-  backups\                 zálohy databázy ([zálohy](backups.md))
+  backups\                 komprimované zálohy pred importom, posledných 5 ([zálohy](backups.md))
+  journal-export.jsonl     export zápisov trénera, iba pridávanie ([zálohy](backups.md))
   preview\                 generovaný Markdown náhľad denníka a stavu (mazateľné)
   logs\                    logy sťahovania a importu (bez zdravotných dát)
 ```
@@ -53,7 +54,7 @@ závislostí). Drží všetko, čo je spoločné pre všetky moje počítače:
   "data_dir": "D:\\Sync\\Bimbo-data",
   "database": "runs.sqlite3",
   "fit_dir": "fit",
-  "backups": { "rotate": 10, "daily_days": 30, "monthly_months": 12 },
+  "backups": { "keep": 5 },
   "sync": { "health_days": 4, "cooldown_minutes": 90, "daily_task_time": "07:30" },
   "garmin": { "token_dir": "<app>/config/garmin" }
 }

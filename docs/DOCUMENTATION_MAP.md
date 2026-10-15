@@ -24,6 +24,8 @@ uvádzaj iba existujúcich vlastníkov. Členenie a pravidlá vlastní
 | Potreba | Kanonický vlastník |
 | --- | --- |
 | Účel, používanie a pôvod repozitára (pre človeka) | [`README.md`](../README.md) |
+| Etapy E0–E7, moduly, kritériá prijatia (plán implementácie) | [`IMPLEMENTATION_PLAN.md`](../IMPLEMENTATION_PLAN.md) |
+| Stiahnutie repozitára na nový Windows (PowerShell blok) | [`HOW_TO_USE.md`](../HOW_TO_USE.md) |
 | Pravidlá a skilly agentov | [`.rulesync/`](../.rulesync/) |
 | Ručné pregenerovanie výstupov pre agentov | [`maintain-agent-governance`](../.rulesync/skills/maintain-agent-governance/SKILL.md) |
 | Čo tréner robí, nerobí a ponúka navyše oproti Garminu | [Účel a rozsah](project/purpose.md) |
@@ -46,7 +48,7 @@ uvádzaj iba existujúcich vlastníkov. Členenie a pravidlá vlastní
 | Tabuľky SQLite, životnosť, fulltext | [Dátový model](coach/data-model.md) |
 | Skript sťahovania, cooldown, kódy, skratka a plánovaná úloha, záložné cesty | [Sťahovanie z Garminu](coach/garmin-sync.md) |
 | FIT → tabuľky cez FIT SDK, párovanie s predpisom | [Import FIT](coach/fit-import.md) |
-| Záloha pred zápisom, rotácia, obnova | [Zálohy](coach/backups.md) |
+| Záloha zviazaná so sťahovaním, posledných 5, export denníka, obnova | [Zálohy](coach/backups.md) |
 | Vrstvy pamäte, čo sa zapisuje kedy, rozpočet kontextu, skill „ulož dohodnuté“ | [Pamäť a denník](coach/memory-and-journal.md) |
 | Výber ďalšieho predpisu, rotácia, progresia, porovnanie s realitou, dlhodobý plán | [Predpisy](coach/prescriptions.md) |
 | Tempo pri tepe, drift, ekvivalentná rýchlosť, reporty, varovania | [Analýzy](coach/analyses.md) |

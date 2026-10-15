@@ -3,8 +3,8 @@
 Lokálna aplikácia, ktorú na Windows vytvorí `install.cmd` vedľa stiahnutého repozitára,
 uv, spravovaný Python, venv so závislosťami, výber
 dátového adresára, skratka na ploche, registrácia MCP v asistentoch. Všetko je k 15. 10. 2026
-návrh; inštalátor neexistuje. Ako repozitár stiahnem, vlastní návod
-([používanie](../usage/new-computer.md)).
+návrh; inštalátor neexistuje. Ako repozitár stiahnem, vlastní [`HOW_TO_USE.md`](../../HOW_TO_USE.md);
+jednoduchý postup je v [používaní](../usage/new-computer.md).
 
 | Stránka | Čo tu nájdeš |
 | --- | --- |

@@ -25,7 +25,7 @@ implementované** ([stav implementácie](implementation-status.md)).
 | [Dátový model](data-model.md) | Tabuľky SQLite, ich životnosť, čo je namerané a čo vlastné, fulltext. |
 | [Sťahovanie z Garminu](garmin-sync.md) | Skript nad garminconnect: prihlásenie, cooldown, exit kódy, spúšťanie na klik a plánovane, záložné cesty. |
 | [Import FIT](fit-import.md) | Z FIT súboru do tabuliek cez Garmin FIT SDK; idempotencia; čo sa počíta pri importe. |
-| [Zálohy](backups.md) | Záloha pred zápisom, rotácia, obnova z FIT súborov. |
+| [Zálohy](backups.md) | Záloha pred importom nových dát, posledných 5, export denníka, obnova z FIT súborov. |
 
 ## 3. Tréner
 

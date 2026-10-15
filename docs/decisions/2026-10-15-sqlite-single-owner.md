@@ -22,7 +22,8 @@ vyhľadávanie; pri stovkách krátkych záznamov stačí dátum a fulltext SQLi
 
 - Schéma má oddelené tabuľky podľa životnosti dát (denník sa iba pridáva, stav sa
   prepisuje, plán sa mení zriedka) ([dátový model](../coach/data-model.md)).
-- Pred každým zápisom vzniká záloha cez SQLite backup API ([zálohy](../coach/backups.md)).
+- Pred importom nových dát vzniká komprimovaná záloha; zápisy trénera sa pridávajú do
+  exportu denníka ([zálohy](../coach/backups.md)).
 - MCP server a skilly zapisujú cez nástroje projektu, nikdy priamym SQL
   ([rozhrania](../coach/interfaces.md)).
 - Fulltext (FTS5) nad denníkom a zhrnutiami pre otázky do minulosti; vektorový index sa

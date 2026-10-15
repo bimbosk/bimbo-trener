@@ -18,7 +18,7 @@ skilly asistentov. Nikto okrem `db.py` nepíše SQL; MCP a skilly volajú funkci
 | `plan add` / `plan list` | zápis a výpis predpisov | MCP |
 | `journal add` / `journal search` | zápis a fulltext denníka | MCP |
 | `summary add` | zápis zhrnutia obdobia | MCP |
-| `backup` / `restore --from` / `rebuild` | zálohy a obnova ([zálohy](backups.md)) | správca |
+| `backup` / `restore --from` / `rebuild` | zálohy a obnova ([zálohy](backups.md)) | ja, pri probléme |
 | `render` | Markdown náhľad do `preview\` | skratka, MCP |
 
 Kódy: 0 OK, 75 dočasné zlyhanie, 77 chýba prihlásenie alebo nastavenie, 1 chyba.

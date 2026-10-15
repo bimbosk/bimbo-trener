@@ -5,6 +5,17 @@ Ukladá moje behy, analyzuje ich a pomáha s plánovaním tréningu. Nejde o
 softvérový projekt. Kód (napr. SQLite databáza alebo Python skripty) pribudne
 iba vtedy, keď ho ukladanie alebo analýza behov reálne potrebuje.
 
+## Nový počítač
+
+Na novom Windows počítači začnem návodom
+[HOW_TO_USE — stiahnutie projektu](HOW_TO_USE.md), potom `install.cmd`
+([inštalácia](docs/application/installation.md)).
+
+## Implementácia
+
+Postup od špecifikácie ku kódu, pripravený pre session bez kontextu:
+[implementačný plán](IMPLEMENTATION_PLAN.md).
+
 ## Dokumentácia
 
 Čo má projekt byť a ako má fungovať, je zapísané v `docs/`: vstupom je

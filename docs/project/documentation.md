@@ -57,7 +57,8 @@ zapisuje sa iba platný stav a jeho dôvod.
 
 ## Vzťah k ostatným zdrojom
 
-Koreňové `README.md` je vstup pre človeka. Pokyny agentov (`CLAUDE.md`, `AGENTS.md`,
+Koreňové `README.md` je vstup pre človeka, `HOW_TO_USE.md` je postup stiahnutia na nový
+Windows. Pokyny agentov (`CLAUDE.md`, `AGENTS.md`,
 skilly) sú generované z `.rulesync/` a na dokumentáciu odkazujú cez mapu. Moje dáta
 a denník nie sú dokumentácia; žijú v dátovom adresári
 ([dátový adresár](../coach/data-directory.md)).

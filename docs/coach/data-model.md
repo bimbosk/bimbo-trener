@@ -47,12 +47,20 @@ milimetre a milisekundy pre dynamiku), prevody robí vrstva analýz
 | `coach_state` | jeden riadok: aktuálny stav trénera ako text (fáza plánu, čo je na rade, posledné rozhodnutia, otvorené otázky), aktuálne pohodlné rýchlosti, čas aktualizácie | prepisuje sa; história v zálohách |
 | `training_plan` | dlhodobý plán: cieľ, fázy s rozsahom dátumov a zámerom, míľniky (12, 15, 17, 19, 21,1 km) s plánovaným a skutočným dátumom, verzia | mení sa zriedka, verzuje sa |
 | `conventions` | moje pravidlá ako kľúč/hodnota: `segments=10`, `incline_per_0_4_kmh=1`, `min_running_speed=7`, … | takmer nikdy |
-| `meta` | verzia schémy, `data_id`, čas poslednej synchronizácie a importu | — |
+| `meta` | verzia schémy, `data_id`, `last_sync` (UTC, odkedy pýtať Garmin), čas posledného importu, dátum poslednej zálohy | — |
 
 ### Fulltext
 
 Virtuálna tabuľka FTS5 nad `journal.text` a `summaries.text` (tokenizér `unicode61
 remove_diacritics 2`) pre otázky do minulosti („kedy som sa sťažoval na koleno“).
+
+## Časy
+
+Každý vlastný záznam má dva časy: **dátum udalosti** (lokálny dátum, kedy sa to stalo:
+deň behu, deň bolesti, deň rozhodnutia) a **čas zápisu** (UTC s presnosťou na sekundu,
+kedy to tréner zapísal). „Čo sa dialo v auguste“ triedi podľa dátumu udalosti; „čo sme sa
+dohodli naposledy“ podľa času zápisu. Namerané záznamy majú časy z FIT (UTC) a lokálny čas
+štartu.
 
 ## Vzťahy
 

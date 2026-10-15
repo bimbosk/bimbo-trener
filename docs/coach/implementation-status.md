@@ -2,7 +2,10 @@
 
 **K 15. 10. 2026 nie je implementované nič.** Existuje iba táto špecifikácia.
 
-## Navrhované etapy
+## Etapy
+
+Podrobné zadanie každej etapy vlastní [implementačný plán](../../IMPLEMENTATION_PLAN.md);
+táto stránka drží stav.
 
 | Etapa | Obsah | Kritérium prijatia | Stav |
 | --- | --- | --- | --- |

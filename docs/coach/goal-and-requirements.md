@@ -27,7 +27,8 @@ a dlhodobý plán, pričom si pamätá všetko, čo sa dohodlo.
   nevymýšľa ani potichu neopravuje ([rozhodnutie](../decisions/2026-10-15-fit-source-of-truth.md)).
 - MUSÍ: všetky zapisované dáta sú v jednej SQLite databáze v dátovom adresári
   ([rozhodnutie](../decisions/2026-10-15-sqlite-single-owner.md)).
-- MUSÍ: pred každým zápisom vznikne záloha ([zálohy](backups.md)).
+- MUSÍ: pred importom nových dát vznikne záloha; bez nových dát sa nič nezapisuje ani
+  nezálohuje ([zálohy](backups.md)).
 - MUSÍ: databáza je z FIT súborov znovu postaviteľná.
 - NESMIE: dáta o behoch a zdraví opustiť moje počítače okrem Garmin Connect
   ([bezpečnosť](security.md)).

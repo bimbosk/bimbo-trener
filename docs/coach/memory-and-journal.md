@@ -27,6 +27,8 @@ Nič dôležité nesmie existovať iba v tretej vrstve.
 | prvý rozhovor nového mesiaca | `summaries(month)` | to isté |
 
 Priebežný zápis je poistka: ak okno zomrie uprostred, stratí sa najviac posledná veta.
+Každý zápis trénera sa zároveň doplní do `journal-export.jsonl` v dátovom adresári
+([zálohy](backups.md)).
 
 ## Čo sa načítava a koľko
 
@@ -68,6 +70,7 @@ Nová verzia zhrnutia toho istého obdobia nahrádza staršiu; staršia ostáva 
 Spúšťam ho ja alebo tréner sám, keď rozhovor smeruje k záveru. Skill:
 
 1. prejde rozhovor a vytiahne pocity, okolnosti, predpisy, rozhodnutia a zmeny plánu,
+   každé s dátumom udalosti; prepis rozhovoru sa neukladá,
 2. porovná s tým, čo už je zapísané priebežne, a doplní chýbajúce,
 3. zapíše zhrnutie rozhovoru a aktualizuje `coach_state`,
 4. ak je nový týždeň alebo mesiac, napíše zhrnutie obdobia,

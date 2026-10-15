@@ -35,13 +35,15 @@ zámkom. Výsledok ide vždy aj do `logs\sync.log` a do `meta` v databáze, tak�
 
 ## Postup jedného behu
 
-1. Načítať lokálny config; ak `garmin_sync_enabled` nie je `true` alebo chýba token,
+1. Načítať konfiguráciu; ak `garmin_sync_enabled` nie je `true` alebo chýba token,
    skončiť kódom 77 bez jediného sieťového requestu.
 2. Ak platí cooldown (súbor s časom), skončiť kódom 0 s informáciou.
 3. Prihlásiť sa tokenom (`login(tokenstore)`); knižnica token obnoví sama. Nikdy
    neprihlasovať heslom.
-4. Zoznam aktivít od posledného známeho dátumu (`get_activities_by_date`), všetky typy;
-   behy idú do `runs`, ostatné do `activities_other`.
+4. Prečítať `meta.last_sync`; zoznam aktivít od tohto dátumu (`get_activities_by_date`),
+   všetky typy; behy idú do `runs`, ostatné do `activities_other`. Ak zoznam je prázdny
+   a denné dáta za posledné dni sa nezmenili, skončiť „nič nové“ bez zálohy a bez zápisu.
+4a. Ak je čo zapísať: záloha databázy podľa [záloh](backups.md).
 5. Pre každú novú aktivitu: `download_activity(..., ORIGINAL)` → ZIP → vybrať `.fit` →
    zapísať atomicky do `data/fit/<activity_id>.fit`. Existujúci súbor sa nesťahuje znova.
    Pauza 1 s medzi requestmi.
@@ -52,7 +54,8 @@ zámkom. Výsledok ide vždy aj do `logs\sync.log` a do `meta` v databáze, tak�
    `get_respiration_data`, `get_spo2_data`, `get_body_composition`; surový JSON do
    `connect_raw`, normalizované hodnoty do `daily_health` a `body_composition`
    (prepis, idempotentne). Pauza 1 s medzi requestmi; spolu rádovo 50 requestov.
-7. Zapísať do `meta` čas synchronizácie, do logu súhrn.
+7. Zapísať `meta.last_sync` (UTC), do logu súhrn, do `journal-export.jsonl` nič (import
+   nie je zápis trénera).
 
 ## Chyby a kódy
 
