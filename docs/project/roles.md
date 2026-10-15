@@ -13,5 +13,5 @@
   v odpovedi ([hodnotenie tréningov](../running/evaluation.md)).
 - Môj pocit má prednosť pred číslami: „na hrane“ znamená nepridávať, nech čísla hovoria
   čokoľvek.
-- Zdravotné dáta patria do dátového adresára, nie do Gitu
+- Zdravotné dáta patria do dátového adresára, nikdy do Gitu
   ([dokumentácia](documentation.md), Súkromie).

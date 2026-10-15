@@ -39,6 +39,7 @@ k najjemnejšiemu a zastaví sa, keď je odpoveď jasná:
 | 2 | posledné `summaries(week)` | 300 |
 | 3 | `journal` za posledných 7 dní | 1 000–2 000 |
 | 4 | posledné 2–3 `runs` ako súhrnné čísla | 300 |
+| 5 | `daily_health` za posledné 3 dni (jeden riadok na deň) | 300 |
 
 Spolu rádovo 3 000 tokenov bez ohľadu na dĺžku histórie. Sekundové záznamy, staré rozhovory
 a celé mesiace sa nečítajú, pokiaľ sa nepýtam výslovne; vtedy sa pridá príslušné

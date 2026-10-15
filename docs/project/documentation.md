@@ -45,9 +45,10 @@ zapisuje sa iba platný stav a jeho dôvod.
 - **Odkazy namiesto opakovania.** Rozcestník a mapa obsahujú jednu vetu na zdroj.
 - **Záväznosť.** Rozhodnutia v `decisions/` a MUSÍ/NESMIE v `coach/` sú záväzné. Pokyny
   agentov v `.rulesync/` sú chránené.
-- **Súkromie.** Namerané behy, tep, FIT súbory, prihlasovacie tokeny a prepisy rozhovorov
-  patria do dátového adresára, nie do Gitu. Dokumentácia smie uvádzať iba súhrnné čísla,
-  ktoré som do nej sám dal ([východiskový stav](../evidence/2026-08-29-baseline.md)).
+- **Súkromie.** Namerané behy, tep, hmotnosť, FIT súbory, exporty, prihlasovacie tokeny
+  a prepisy rozhovorov patria do dátového adresára, nie do Gitu, hoci je repozitár
+  súkromný. Dokumentácia opisuje, aké dáta existujú a ako sa zbierajú, nie ich hodnoty.
+  Podklady na analýzu ležia v `beh/`, ktorý Git ignoruje.
 - **Názvoslovie.** Adresáre a súbory po anglicky, malými písmenami, slová spojené pomlčkou
   (`CLAUDE.md`, Jazyk); obsah po slovensky, v prvej osobe. Záznamy rozhodnutí a dôkazov
   začínajú dátumom `RRRR-MM-DD`.

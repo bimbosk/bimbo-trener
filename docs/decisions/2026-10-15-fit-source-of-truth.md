@@ -22,5 +22,5 @@ a porušuje pravidlo, že hodnoty sa nevymýšľajú.
 - Databáza je z FIT súborov kedykoľvek znovu postaviteľná; to je posledná istota pri
   poškodení databázy alebo konflikte synchronizácie ([zálohy](../coach/backups.md)).
 - Pole, ktoré FIT neobsahuje, ostáva v databáze prázdne.
-- Hodnoty z môjho textu z 29. 8. 2026 sa môžu zapísať iba s označením zdroja „vlastný
-  prepis“, nie ako namerané ([otvorené rozhodnutie O2](README.md#otvorené-rozhodnutia)).
+- Hodnoty z môjho textu z 29. 8. 2026 sa do databázy nezapisujú; história príde ako FIT
+  z Garmin Connect ([rozhodnutie O2](README.md#otvorené-rozhodnutia)).

@@ -16,7 +16,9 @@ súbor druhýkrát nič nezmení.
    označenia.
 2. `session_mesgs` → jeden riadok `runs`. Mapovanie polí FIT → stĺpce drží `fit_import.py`;
    pole, ktoré v správe nie je, ostáva `NULL`.
-3. `lap_mesgs` → `laps`; `record_mesgs` → `records`; `event_mesgs` → `events`.
+3. `lap_mesgs` → `laps`; `record_mesgs` → `records`; `event_mesgs` → `events`;
+   `time_in_zone_mesgs` → `time_in_zone` a `zone_snapshot`; `split_mesgs` → `splits`;
+   nepomenované správy → `fit_raw`.
 4. Miesto (pás/vonku) z `sub_sport` (`treadmill`, `generic`, …); ak chýba, `NULL`, nie
    odhad.
 5. Pred zápisom záloha databázy ([zálohy](backups.md)); zápis v jednej transakcii.
@@ -30,12 +32,11 @@ Odvodené ukazovatele (ekvivalentná rýchlosť, drift, tempo pri tepe) sa poč�
 vyžiadanie vo vrstve analýz, nie pri importe, aby zmena vzorca nevyžadovala reimport
 ([analýzy](analyses.md)).
 
-## Dáta z môjho textu z 29. 8. 2026
+## Iné formáty
 
-Štyri behy bez dátumu ([dôkaz](../evidence/2026-08-29-baseline.md)) sa dajú zapísať do
-`runs` iba so `source = owner_text`, bez `activity_id` z Garminu a s dátumom `NULL` alebo
-odhadom označeným v poznámke. Či sa to urobí, je otvorené rozhodnutie O2; prednosť má
-hromadný export účtu, ktorý prinesie ich FIT súbory.
+TCX, GPX a CSV z Garmin Connect sa neimportujú; všetko, čo obsahujú, je vo FIT
+([obsah FIT](../evidence/2026-10-15-fit-file-contents.md)). História sa dopĺňa stiahnutím
+FIT všetkých aktivít podľa dátumu, nie z `Activities.csv`.
 
 ## Overenie importu
 

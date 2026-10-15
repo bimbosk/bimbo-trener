@@ -41,19 +41,42 @@ nástroj ho roznáša na všetky jeho počítače
   sa, nič sa nevytvára ani neprepisuje. Toto je bežný prípad na druhom až desiatom počítači.
 - Cesta sa uloží do lokálneho configu aplikácie na tomto PC.
 
-## Lokálny config (viazaný na počítač, mimo sync)
+## Konfigurácia: `bimbo-trener.json` v koreni repozitára
+
+Jediný konfiguračný súbor, commitnutý v Gite, formát JSON (štandardná knižnica, bez
+závislostí). Drží všetko, čo je spoločné pre všetky moje počítače:
 
 ```json
 {
   "schema_version": 1,
+  "install_root": "../bimbo-trener-app",
   "data_dir": "D:\\Sync\\Bimbo-data",
-  "garmin_sync_enabled": false,
-  "token_dir": "<app>\\config\\garmin"
+  "database": "runs.sqlite3",
+  "fit_dir": "fit",
+  "backups": { "rotate": 10, "daily_days": 30, "monthly_months": 12 },
+  "sync": { "health_days": 4, "cooldown_minutes": 90, "daily_task_time": "07:30" },
+  "garmin": { "token_dir": "<app>/config/garmin" }
 }
 ```
 
-`garmin_sync_enabled` je `true` iba na počítači, kde som prešiel prihlásením do Garminu.
-Inde skratka „Stiahni dáta“ oznámi, že sťahovanie tu nie je nastavené.
+- `install_root` je cieľ aplikácie vedľa repozitára ([členenie](../application/layout.md)).
+- `data_dir` je cesta k dátovému adresáru; `database` a `fit_dir` sú relatívne k nemu.
+- `<app>` sa nahrádza skutočnou cestou aplikácie na danom počítači.
+
+**Miestny prepis `bimbo-trener.local.json`** v koreni repozitára, ignorovaný Gitom, má
+rovnaký tvar a prepíše iba uvedené kľúče. Použije sa na počítači, kde je dátový adresár
+na inej ceste alebo kde je zapnuté sťahovanie:
+
+```json
+{ "data_dir": "E:\\Sync\\Bimbo-data", "garmin_sync_enabled": true }
+```
+
+`garmin_sync_enabled` je `true` iba na počítači, kde som prešiel prihlásením do Garminu;
+nikdy nie je v commitnutom súbore. Inde skratka „Stiahni dáta“ oznámi, že sťahovanie tu
+nie je nastavené. Inštalátor pri výbere dátového adresára zapíše cestu do miestneho
+prepisu, ak sa líši od commitnutej; commitnutú hodnotu mením ja ručne, keď má platiť
+všade. Poradie čítania: `bimbo-trener.json` → `bimbo-trener.local.json` → parametre
+príkazu.
 
 ## Čo cestuje kde
 
@@ -61,5 +84,6 @@ Inde skratka „Stiahni dáta“ oznámi, že sťahovanie tu nie je nastavené.
 | --- | --- | --- |
 | behy, predpisy, denník, stav, plán, konvencie | databáza v dátovom adresári | musí byť na každom PC |
 | FIT súbory, zálohy | dátový adresár | zdroj pravdy a obnova |
-| cesta k dátovému adresáru, token Garminu, logy inštalácie | app na danom PC | viazané na stroj alebo citlivé |
+| spoločná konfigurácia (`bimbo-trener.json`) | repozitár (Git) | rovnaká na všetkých PC |
+| miestny prepis (`bimbo-trener.local.json`), token Garminu, logy | repozitár mimo Gitu / app na danom PC | viazané na stroj alebo citlivé |
 | kód, pravidlá, dokumentácia | repozitár (Git) | verzované, bez dát |

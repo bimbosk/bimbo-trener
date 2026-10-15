@@ -10,8 +10,8 @@
 | E1 | `fit_import.py` nad jedným FIT súborom exportovaným z webu | hodnoty `runs` sa zhodujú s Garmin Connect pre ten istý beh; dôkaz zapísaný | nezačaté |
 | E2 | pamäť: `journal`, `summaries`, `coach_state`, `conventions`; CLI príkazy; `render` | zápis a čítanie cez CLI; náhľad v `preview\` | nezačaté |
 | E3 | MCP server s nástrojmi na čítanie a zápis; registrácia v Claude Code | asistent načíta stav a zapíše pocit bez priameho SQL | nezačaté |
-| E4 | skilly `load-coach-context`, `save-agreed`, `prescribe-workout` v `.rulesync/`  | nový rozhovor začne načítaním, skončí zápisom | nezačaté |
-| E5 | `garmin_sync.py` s cooldownom a kódmi; skratka; plánovaná úloha | jeden klik stiahne nový beh a importuje ho; 429 skončí 75 bez opakovania | nezačaté |
+| E4 | skilly `load-coach-context`, `save-agreed`, `prescribe-workout`, `sync-garmin-data` v `.rulesync/` | nový rozhovor začne načítaním, skončí zápisom; „stiahni dáta“ spustí `sync.cmd` | nezačaté |
+| E5 | `garmin_sync.py` s cooldownom a kódmi; `sync.cmd` a `scripts\sync.ps1`; skratka; plánovaná úloha | jeden klik stiahne nový beh a importuje ho; 429 skončí 75 bez opakovania | nezačaté |
 | E6 | inštalátor pre Windows podľa [aplikácie](../application/README.md); registrácia MCP v Codexe | čistý Windows → funkčná app jedným `install.cmd` | nezačaté |
 | E7 | prvý týždeň reálnej prevádzky; dôkaz | týždeň prevádzky bez ručného zásahu | nezačaté |
 

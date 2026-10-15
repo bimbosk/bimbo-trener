@@ -5,8 +5,9 @@
 - Behám takmer každý deň, hlavne na **bežiacom páse doma**. Beh vonku mi vyhovuje menej,
   nie kondične, ale kvôli oblečeniu, teplu a komfortu. Pás ostáva hlavným tréningovým
   miestom.
-- Nosím hodinky Garmin, ktoré sa synchronizujú do Garmin Connect cez telefón. Model
-  hodiniek je otvorená otázka O1 v [registri](../decisions/README.md).
+- Nosím hodinky **Garmin Venu 4, 45 mm**, ktoré sa synchronizujú do Garmin Connect cez
+  telefón. Doma mám váhu **Index S2** (Wi-Fi) a na bicykli **Edge 1040**
+  ([zariadenia](../evidence/2026-10-15-devices-and-health-data.md)).
 - Používam asi 10 počítačov s Windows a nástroj, ktorý medzi nimi synchronizuje vybrané
   priečinky ([dátový adresár](../coach/data-directory.md)).
 

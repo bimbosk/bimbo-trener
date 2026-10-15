@@ -30,7 +30,9 @@ Tréner pomenuje, rozhodnutie nechá mne:
 - opakovaná zmienka bolesti v denníku (dva a viac záznamov za dva týždne),
 - viac než 7 dní bez behu bez zapísaného dôvodu.
 
-## Čo sa neanalyzuje
+## Denné zdravotné dáta v koučovaní
 
-Spánok, stres, Body Battery, kroky: Garmin ich zobrazuje; tréner si ich vypýta odo mňa
-vetou, ak ich potrebuje ([účel](../project/purpose.md)).
+Pokojový tep, HRV, spánok, Body Battery a Training Readiness sa zbierajú denne
+([dátový model](data-model.md)) a tréner ich číta ako jeden riadok na deň: zhoršený
+pokojový tep alebo HRV a krátky spánok sú dôvod znížiť náročnosť predpisu, nie dôvod na
+vlastné grafy. Ktoré z nich majú pre mňa výpovednú hodnotu, sa zistí z nazbieraných dát.

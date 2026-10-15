@@ -42,7 +42,7 @@ uvádzaj iba existujúcich vlastníkov. Členenie a pravidlá vlastní
 | uv, Python, pripnuté balíky, MCP registrácie, skratka, plánovaná úloha | [Externé nástroje](application/external-tools.md) |
 | Produkt jednou vetou, príklady rozhovorov, MUSÍ/NESMIE | [Cieľ a požiadavky](coach/goal-and-requirements.md) |
 | Tok dát, vrstvy nad SQLite, čo beží kde | [Architektúra](coach/architecture.md) |
-| Zdieľaný dátový adresár, marker, `init`/`attach`, lokálny config, sync | [Dátový adresár](coach/data-directory.md) |
+| Zdieľaný dátový adresár, marker, `init`/`attach`, konfigurácia `bimbo-trener.json`, sync | [Dátový adresár](coach/data-directory.md) |
 | Tabuľky SQLite, životnosť, fulltext | [Dátový model](coach/data-model.md) |
 | Skript sťahovania, cooldown, kódy, skratka a plánovaná úloha, záložné cesty | [Sťahovanie z Garminu](coach/garmin-sync.md) |
 | FIT → tabuľky cez FIT SDK, párovanie s predpisom | [Import FIT](coach/fit-import.md) |
@@ -57,7 +57,10 @@ uvádzaj iba existujúcich vlastníkov. Členenie a pravidlá vlastní
 | Účet Garmin, prihlásenie knižnicou, limity 429/403, podmienky | [Garmin Connect](integrations/garmin-connect.md) |
 | Registrácia MCP v Codexe a Claude Code, spoločné správanie trénera | [Asistenti](integrations/assistants.md) |
 | Register rozhodnutí a otvorené rozhodnutia O1–O6 | [Rozhodnutia](decisions/README.md) |
-| Môj text z 29. 8. 2026 (výkony, príklady behov) | [Východiskový stav](evidence/2026-08-29-baseline.md) |
+| Môj text z 29. 8. 2026 (čo dokladá) | [Východiskový stav](evidence/2026-08-29-baseline.md) |
+| Štruktúra FIT z Venu 4, porovnanie exportov | [Obsah FIT súboru](evidence/2026-10-15-fit-file-contents.md) |
+| Úplný zoznam polí FIT a stĺpcov exportov | [Inventár polí FIT](evidence/2026-10-15-fit-field-inventory.md) |
 | Polia Garmin Connect pre beh na páse | [Polia Garmin Connect](evidence/2026-10-15-garmin-screenshot-fields.md) |
 | Štyri cesty FIT do počítača, API, riziká, zdroje | [Prieskum Garmin](evidence/2026-10-15-garmin-research.md) |
+| Venu 4, Index S2, Edge 1040: čo zapisujú, volania knižnice | [Zariadenia a zdravotné dáta](evidence/2026-10-15-devices-and-health-data.md) |
 | Aktuálne verzie a odporúčaná kombinácia | [Overenie verzií](evidence/2026-10-15-version-check.md) |

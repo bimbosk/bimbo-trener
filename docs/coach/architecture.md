@@ -39,7 +39,7 @@ Nikto okrem `db.py` nepíše SQL. Skilly asistentov volajú MCP nástroje, nie s
 
 | Miesto | Čo |
 | --- | --- |
-| repozitár `bimbo-trener` | kód, inštalátor, dokumentácia, pokyny agentov; otvorený v Claude Code / Codexe |
+| repozitár `bimbo-trener` | kód, inštalátor, dokumentácia, pokyny agentov, konfigurácia `bimbo-trener.json`; otvorený v Claude Code / Codexe |
 | app `bimbo-trener-app` (vedľa repozitára, mimo Gitu) | uv, Python, venv so závislosťami, lokálny config, logy, zámok ([členenie](../application/layout.md)) |
 | dátový adresár (synchronizovaný) | FIT súbory, databáza, zálohy, náhľady ([dátový adresár](data-directory.md)) |
 | Garmin Connect | zdroj aktivít; jediná externá služba |

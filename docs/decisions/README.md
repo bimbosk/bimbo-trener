@@ -23,15 +23,20 @@ Stav: **platí** · **otvorené** (zatiaľ nerozhodnuté).
 | 15. 10. 2026 | Asistenti (Claude Code aj Codex) sa k databáze pripájajú cez **MCP server** projektu; čítanie voľne, zápis so schválením. | [Rozhrania](../coach/interfaces.md) | platí | — |
 | 15. 10. 2026 | Verzie: **Python 3.14, garminconnect 0.3.18, curl_cffi 0.16.3, garmin-fit-sdk 21.218.0**, pripnuté. | [Externé nástroje](../application/external-tools.md) | platí | [dôkaz](../evidence/2026-10-15-version-check.md) |
 | 15. 10. 2026 | Token Garminu ostáva v lokálnom configu každého PC, nesynchronizuje sa; prihlásenie raz na každom PC, kde sa sťahuje. | [Garmin Connect](../integrations/garmin-connect.md) | platí | — |
+| 15. 10. 2026 | **Zbierať všetko, čo Garmin dáva**: všetky aktivity s FIT a denné zdravotné dáta z Venu 4 a Index S2, so surovým JSON; čo je užitočné, sa zistí priebežne. | [Dátový model](../coach/data-model.md) | platí | [záznam](2026-10-15-collect-everything.md) |
+| 15. 10. 2026 | **Citlivé dáta iba v externej databáze.** Repozitár je súkromný, napriek tomu neobsahuje žiadne namerané hodnoty, FIT súbory ani exporty; podklady ležia v priečinku `beh/`, ktorý Git ignoruje. | [Dokumentácia](../project/documentation.md) | platí | — |
+| 15. 10. 2026 | **Sťahuje sa iba originál FIT**; TCX, GPX a CSV exporty nič nepridávajú. Dátový model zachytáva aj zóny, splity a snímku zón a prahov z FIT. | [Import FIT](../coach/fit-import.md) | platí | [dôkaz](../evidence/2026-10-15-fit-file-contents.md) |
+| 15. 10. 2026 | **Sťahovanie spúšťa `sync.cmd`** v koreni repozitára; skratka na ploche, skill „stiahni dáta“ v `.rulesync` aj plánovaná úloha volajú ten istý súbor. | [Sťahovanie](../coach/garmin-sync.md) | platí | — |
+| 15. 10. 2026 | **Konfigurácia v `bimbo-trener.json` v koreni repozitára** (JSON, commitnutý): cesta aplikácie, dátový adresár, databáza, zálohy, sťahovanie. Miestny prepis `bimbo-trener.local.json` mimo Gitu pre odlišnú cestu a zapnuté sťahovanie. | [Dátový adresár](../coach/data-directory.md) | platí | — |
 | 15. 10. 2026 | Dokumentácia v `docs/` je členená na oblasti s rozcestníkmi; každá informácia má jedného vlastníka; píše sa v prvej osobe bez histórie rozhodovania. | [Dokumentácia](../project/documentation.md) | platí | — |
 
 ## Otvorené rozhodnutia
 
 | # | Otázka | Súvislosť | Kam patrí odpoveď |
 | --- | --- | --- | --- |
-| O1 | Model mojich Garmin hodiniek (rozhoduje o kopírovaní cez USB a o poliach dynamiky behu). | [Sťahovanie](../coach/garmin-sync.md) | [Bežec a cieľ](../running/runner-and-goal.md) |
-| O2 | Doplniť štyri behy z textu z 29. 8. 2026 (bez dátumov) do databázy, alebo začať až importom z Garmin Connect / hromadným exportom. | [Východiskový stav](../evidence/2026-08-29-baseline.md) | [Import FIT](../coach/fit-import.md) |
-| O3 | Má tréner plánovať týždeň dopredu, alebo vždy iba ďalší beh podľa pocitu z posledného? | [Predpisy](../coach/prescriptions.md) | tamže |
-| O4 | Je repozitár na GitHube súkromný? Rozhoduje, či smú byť v dokumentácii súhrnné zdravotné čísla. | [Dokumentácia](../project/documentation.md) | tamže |
-| O5 | Má Python inštalovať inštalátor cez uv, alebo stačí winget? | [Inštalácia](../application/installation.md) | tamže |
-| O6 | Má sa ukladať aj skrátený prepis rozhovoru, alebo iba závery? | [Pamäť a denník](../coach/memory-and-journal.md) | tamže |
+| O1 | ~~Model hodiniek~~ — uzavreté 15. 10. 2026: Venu 4, 45 mm; váha Index S2; cyklopočítač Edge 1040 ([zariadenia](../evidence/2026-10-15-devices-and-health-data.md)). | — | [Bežec a cieľ](../running/runner-and-goal.md) |
+| O2 | ~~Štyri behy z textu z 29. 8. 2026~~ — uzavreté 15. 10. 2026: nezapisujú sa; história príde ako FIT z Garmin Connect. | — | — |
+| O3 | Ako konkrétne vyzerá plán a debata o tréningu (týždeň dopredu vs. ďalší beh, podoba rozhovoru) — preberie sa neskôr, po prvých dátach. | [Predpisy](../coach/prescriptions.md) | tamže |
+| O4 | ~~Súkromnosť repozitára~~ — uzavreté 15. 10. 2026: repozitár je súkromný, ale citlivé dáta (behy, tep, hmotnosť) patria iba do externej databázy; dokumentácia ich neuvádza. | — | [Dokumentácia](../project/documentation.md) |
+| O5 | ~~Python cez uv alebo winget~~ — uzavreté 15. 10. 2026: uv a spravovaný Python v priečinku aplikácie, identicky ako v `projektant-tzb`. | — | [Externé nástroje](../application/external-tools.md) |
+| O6 | ~~Prepis rozhovoru~~ — uzavreté 15. 10. 2026: ukladajú sa iba závery mechanizmom „ulož dohodnuté“. | — | [Pamäť a denník](../coach/memory-and-journal.md) |

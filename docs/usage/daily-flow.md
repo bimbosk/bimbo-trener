@@ -4,9 +4,11 @@
 
 1. **Beh** na páse podľa predpisu. Hodinky uložia aktivitu a telefón ju pošle do Garmin
    Connect (ak to trvá, potiahnem v aplikácii Garmin nadol).
-2. **Stiahnutie dát:** na počítači s prihlásením dvojklik na skratku **Stiahni dáta
-   z Garminu**. Objaví sa správa: „1 nový beh: 15. 10., 5,90 km“ alebo „nič nové“. Ak
-   Garmin odmietne, správa povie, kedy skúsiť znova; nič neopakujem hneď. Raz denne to
+2. **Stiahnutie dát:** na počítači s prihlásením buď dvojklik na skratku **Stiahni dáta
+   z Garminu** (alebo na `sync.cmd` v repozitári), alebo trénerovi poviem „stiahni dáta“.
+   Otvorí sa okno, v ktorom vidím priebeh; na konci napíše „HOTOVO: 1 nový beh: 15. 10.,
+   7,0 km“ alebo „HOTOVO: nič nové“ a po 3 sekundách sa samo zavrie. Ak Garmin odmietne,
+   okno ostane otvorené a povie, kedy skúsiť znova; nič neopakujem hneď. Raz denne to
    prebehne aj samo, ak som pri počítači.
 3. **Rozhovor s trénerom** v Claude Code alebo Codexe, na ktoromkoľvek počítači:
 

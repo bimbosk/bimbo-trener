@@ -10,13 +10,30 @@ Schéma SQLite v dátovom adresári. Jediný vlastník všetkých zapisovaných 
 
 | Tabuľka | Obsah | Kľúč |
 | --- | --- | --- |
-| `runs` | jeden riadok na aktivitu: identifikátor Garmin, čas štartu (lokálny aj UTC), šport, miesto (pás/vonku z FIT `sub_sport`), vzdialenosť, celkový čas, čas pohybu, uplynutý čas, priemerné a najlepšie tempo, tep priemer/max, výkon priemer/max, kadencia priemer/max, dĺžka kroku, vertikálny pomer, oscilácia, kontakt so zemou, Training Effect aeróbny/anaeróbny, záťaž, kalórie, čas behu/chôdze/nečinnosti, cesta k FIT, zdroj (`garmin_sync`, `manual_fit`, `owner_text`), čas importu | `activity_id` |
-| `laps` | kolá z FIT: poradie, začiatok, trvanie, vzdialenosť, priemerné tempo, tep priemer/max, kadencia | `activity_id`, `lap_index` |
-| `records` | sekundové záznamy: čas, vzdialenosť, rýchlosť, tep, kadencia, výkon, dynamika (čo FIT obsahuje) | `activity_id`, `timestamp` |
+| `runs` | jeden riadok na aktivitu: identifikátor Garmin, čas štartu (lokálny aj UTC), šport, miesto (pás/vonku z FIT `sub_sport`), vzdialenosť, celkový čas, čas pohybu, uplynutý čas, priemerné a najlepšie tempo, tep priemer/max, výkon priemer/max, `normalized_power`, `total_work`, `total_strides`, kadencia priemer/max, dĺžka kroku, vertikálny pomer, oscilácia, kontakt so zemou, Training Effect aeróbny/anaeróbny, `training_load_peak`, kalórie, zariadenie a firmvér, cesta k FIT, zdroj (`garmin_sync`, `manual_fit`), čas importu | `activity_id` |
+| `laps` | kolá z FIT (hodinky ich robia každý kilometer): poradie, spúšťač, začiatok, trvanie, vzdialenosť, rýchlosť, tep priemer/max, kadencia, výkon, NP, dynamika behu | `activity_id`, `lap_index` |
+| `records` | sekundové záznamy: čas, vzdialenosť, rýchlosť, tep, kadencia, výkon, kumulovaný výkon, oscilácia, pomer, dĺžka kroku, kontakt so zemou | `activity_id`, `timestamp` |
 | `events` | pauzy, zmeny (FIT `event`): typ, čas | `activity_id`, `timestamp` |
+| `time_in_zone` | čas v tepových a výkonových zónach za session a za každé kolo, s hranicami zón | `activity_id`, `reference` (session/lap), `index` |
+| `splits` | Garminovo rozpoznanie beh / chôdza / státie: typ, začiatok, trvanie, vzdialenosť, tep | `activity_id`, `split_index` |
+| `zone_snapshot` | max tep, pokojový tep, prahový tep, FTP a hranice zón platné v deň behu (z `time_in_zone` a `zones_target`) | `activity_id` |
+| `fit_raw` | nepomenované správy FIT (číselné ID) ako surové hodnoty | `activity_id`, `mesg_num`, `index` |
+| `activities_other` | aktivity iného typu než beh (jazdy z Edge 1040, chôdza, …): súhrn zo session + cesta k FIT; bez `laps`/`records`, kým nie sú potrebné | `activity_id` |
 
-Chýbajúce pole = `NULL`. Jednotky sú metrické a uložené tak, ako ich dáva FIT (metre,
-sekundy, m/s), prevody robí vrstva analýz.
+### Denné zdravotné dáta (z Garmin Connect, prepisujú sa za posledné 4 dni)
+
+| Tabuľka | Obsah | Kľúč |
+| --- | --- | --- |
+| `daily_health` | jeden riadok na deň: pokojový tep, HRV (nočný priemer, status), spánok (trvanie, skóre, fázy), stres (priemer), Body Battery (min/max/ráno), Training Readiness, Training Status, dýchanie (priemer), SpO2 (priemer), kroky, intenzívne minúty, kalórie | `date` |
+| `body_composition` | jedno váženie: čas, hmotnosť, BMI, tuk %, svalová hmota, kosti, voda %, zdroj (`index_s2`, ručne) | `timestamp` |
+| `connect_raw` | surová JSON odpoveď každého volania: dátum, druh (`sleep`, `hrv`, …), JSON, čas stiahnutia | `date`, `kind` |
+
+Normalizované stĺpce sa plnia z JSON pri sťahovaní; ak Garmin pridá alebo zmení pole,
+surový JSON ostáva a stĺpce sa dajú doplniť bez nového sťahovania.
+
+Chýbajúce pole = `NULL`. Jednotky sú uložené tak, ako ich dáva FIT (metre, sekundy, m/s,
+milimetre a milisekundy pre dynamiku), prevody robí vrstva analýz
+([obsah FIT](../evidence/2026-10-15-fit-file-contents.md)).
 
 ### Vlastné (tréner a ja)
 
@@ -47,6 +64,5 @@ remove_diacritics 2`) pre otázky do minulosti („kedy som sa sťažoval na kol
 
 ## Čo do databázy nepatrí
 
-- Prihlasovací token Garminu, surové JSON odpovede Garmin Connect (iba ak by boli potrebné
-  pre pole, ktoré FIT nemá; vtedy ako samostatná tabuľka `connect_summary` s `activity_id`).
-- Prepisy rozhovorov (otvorené O6); závery áno.
+- Prihlasovací token Garminu.
+- Prepisy rozhovorov; iba závery ([rozhodnutie O6](../decisions/README.md#otvorené-rozhodnutia)).

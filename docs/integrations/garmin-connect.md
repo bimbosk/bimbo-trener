@@ -10,7 +10,8 @@ zdroj FIT súborov a jediná externá služba. Ako skript sťahuje, vlastní
 - Používam vlastný účet Garmin Connect; hodinky nahrávajú aktivity cez aplikáciu
   v telefóne. Typicky do minút, pri úspore batérie aj neskôr; potiahnutie nadol
   v aplikácii synchronizáciu vynúti.
-- Model hodiniek nie je zaznamenaný (otvorené O1).
+- Hodinky Venu 4, 45 mm; váha Index S2; cyklopočítač Edge 1040
+  ([zariadenia](../evidence/2026-10-15-devices-and-health-data.md)).
 
 ## Prihlásenie knižnicou `python-garminconnect`
 
@@ -34,8 +35,8 @@ zdroj FIT súborov a jediná externá služba. Ako skript sťahuje, vlastní
 
 ## Čo sa z Garmin Connect berie
 
-Iba zoznam aktivít typu beh a originálny FIT súbor každej. Wellness dáta (spánok, stres,
-Body Battery) sa nesťahujú ([účel](../project/purpose.md)).
+Všetky aktivity s originálnym FIT súborom a denné zdravotné dáta z Venu 4 a Index S2
+([rozhodnutie](../decisions/2026-10-15-collect-everything.md), [zariadenia](../evidence/2026-10-15-devices-and-health-data.md)).
 
 ## Ručné cesty
 

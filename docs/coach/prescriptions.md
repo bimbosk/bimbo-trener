@@ -32,10 +32,9 @@ hneď, keď je dohodnutý, a zobrazí mi ho v textovom tvare.
 
 Po importe behu, ktorý predpis splnil:
 
-- ak FIT obsahuje kolá zodpovedajúce úsekom, porovná sa každý úsek (tempo, tep priemer/max)
-  s predpísanou rýchlosťou a sklonom;
-- ak kolá nie sú, úseky sa odvodia z `records` podľa času (10 rovnakých intervalov od
-  začiatku pohybu) a označia ako odvodené;
+- úseky sa odvodia z `records` podľa času (10 rovnakých intervalov od začiatku pohybu),
+  lebo hodinky robia kolá každý kilometer, nie podľa mojich úsekov; hodnoty úsekov sú
+  odvodené;
 - výsledok: tabuľka úsek → predpis → skutočnosť → tep, plus slovné zhodnotenie („v úseku 7
   pri 9 km/h a 1 % išiel tep na 135, pri rovnakom úseku pred týždňom 128“).
 

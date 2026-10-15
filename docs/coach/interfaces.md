@@ -39,7 +39,7 @@ Kódy: 0 OK, 75 dočasné zlyhanie, 77 chýba prihlásenie alebo nastavenie, 1 c
 | `update_state(text)` | zápis, schválenie | prepis `coach_state` |
 | `add_summary(kind, period, text)` | zápis, schválenie | zhrnutie obdobia |
 | `set_training_plan(...)` | zápis, schválenie | nová verzia plánu |
-| `run_sync()` | zápis, schválenie | spustí `sync`, ak je na tomto PC zapnuté |
+| `run_sync()` | zápis, schválenie | spustí `sync`, ak je na tomto PC zapnuté; používa ho skill `sync-garmin-data`, keď beží v prostredí bez prístupu k `sync.cmd` |
 
 Nástroje na čítanie majú `readOnlyHint`, aby ich asistent volal bez schvaľovania
 každého volania. Zápisové idú cez `db.py` so zálohou pred zápisom. Server nikdy nečíta
@@ -56,5 +56,6 @@ inštalátora ([asistenti](../integrations/assistants.md)).
 | `save-agreed` („ulož dohodnuté“) | na konci rozhovoru alebo keď smeruje k záveru | vytiahne závery, doplní chýbajúce zápisy, zhrnutie rozhovoru, `update_state`, prípadne zhrnutie týždňa/mesiaca; ukáže, čo zapísal |
 | `prescribe-workout` („daj mi predpis“) | na požiadanie | formát a pravidlá z [predpisov](prescriptions.md), zápis cez `save_plan` |
 | `evaluate-run` | po importe alebo na otázku „ako to šlo“ | porovnanie s predpisom, označenie zdrojov, zápis pocitu |
+| `sync-garmin-data` („stiahni dáta“) | keď poviem „stiahni dáta“ alebo keď tréner zistí, že dnešný beh v databáze chýba | spustí `sync.cmd` v koreni repozitára, počká na výsledok, prečíta `status` a oznámi, čo pribudlo; pri kóde 75 alebo 77 povie, čo robiť ([sťahovanie](garmin-sync.md)) |
 
 Pridanie skillov mení chránené pokyny a robí sa cez `maintain-agent-governance` na môj pokyn.

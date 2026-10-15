@@ -16,7 +16,8 @@ Dáva mi dve veci, ktoré Garmin Connect nemá:
 ## Čo projekt nerobí
 
 - **Neduplikuje Garmin Connect.** Grafy, mapy, kroky, spánok a Body Battery zobrazuje
-  Garmin dobre; tréner ich nekreslí nanovo. Webová stránka ani GUI sa nerobia
+  Garmin dobre; tréner ich nekreslí nanovo, iba zbiera do databázy
+  ([rozhodnutie](../decisions/2026-10-15-collect-everything.md)). Webová stránka ani GUI sa nerobia
   ([rozhodnutie](../decisions/2026-10-15-no-gui-no-web.md)).
 - **Nevymýšľa dáta.** Hodnoty z hodiniek sa zapisujú tak, ako sú; chýbajúca hodnota je
   chýbajúca. Rozlišuje sa namerané, odvodené, odhad a všeobecné odporúčanie

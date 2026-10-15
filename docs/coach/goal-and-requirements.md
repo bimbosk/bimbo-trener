@@ -34,7 +34,8 @@ a dlhodobý plán, pričom si pamätá všetko, čo sa dohodlo.
 
 ### Sťahovanie
 
-- MUSÍ: jedno spustenie stiahne iba nové aktivity; opakované spustenie nič nezduplikuje.
+- MUSÍ: jedno spustenie stiahne iba nové aktivity a denné zdravotné dáta za posledné dni;
+  opakované spustenie nič nezduplikuje.
 - MUSÍ: pri chýbajúcich tokenoch skončiť s jasnou správou bez pokusu o prihlásenie heslom;
   pri 429 nastaviť cooldown a skončiť.
 - MUSÍ: skratka aj plánovaná úloha volajú ten istý kód.

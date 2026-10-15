@@ -30,8 +30,8 @@ odosielanie dát asistentom mimo lokálneho MCP (`CLAUDE.md`, Dáta o behoch).
 ## Git
 
 Repozitár obsahuje kód, pravidlá a dokumentáciu. Databáza, FIT, tokeny, logy a prepisy
-rozhovorov do Gitu nepatria (`.gitignore` ich vylúči). Súhrnné čísla z môjho textu z 29. 8. 2026 sú
-v dokumentácii; či repozitár ostane súkromný, je otvorené O4.
+rozhovorov do Gitu nepatria (`.gitignore` ich vylúči). Repozitár je súkromný, napriek tomu
+neobsahuje žiadne namerané hodnoty; priečinok `beh/` s podkladmi Git ignoruje.
 
 ## Disk
 

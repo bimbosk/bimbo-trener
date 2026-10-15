@@ -8,10 +8,30 @@ prihlásenia a limitov Garminu vlastní [Garmin Connect](../integrations/garmin-
 
 | Spúšťač | Kedy | Čo urobí |
 | --- | --- | --- |
-| skratka „Stiahni dáta z Garminu“ na ploche | po behu, keď hodinky dosynchronizovali | spustí ten istý skript a ukáže správu: „1 nový beh: 15. 10. 5,90 km“ / „nič nové“ / „Garmin odmietol, skús o 90 minút“ / „na tomto PC nie je sťahovanie nastavené“ |
+| `sync.cmd` v koreni repozitára (dvojklik) | po behu, keď hodinky dosynchronizovali | spustí `scripts\sync.ps1`, ten nájde app vedľa repozitára a zavolá `cli.py sync`; na konci okno so správou: „1 nový beh: 15. 10., 7,0 km“ / „nič nové“ / „Garmin odmietol, skús o 90 minút“ / „na tomto PC nie je sťahovanie nastavené“ |
+| skratka „Stiahni dáta z Garminu“ na ploche | to isté | inštalátor ju nasmeruje na kópiu `sync.cmd` v aplikácii; funguje aj bez otvoreného repozitára |
+| skill „stiahni dáta“ v rozhovore | poviem trénerovi „stiahni dáta“ | skill `sync-garmin-data` spustí `sync.cmd`, prečíta jeho výsledok a tréner hneď pokračuje hodnotením nového behu ([rozhrania](interfaces.md)) |
 | plánovaná úloha Windows | raz denne, napr. ráno, v režime Interactive (iba keď som prihlásený) | to isté bez okna; výsledok do logu |
 
-Obidva volajú `cli.py sync`. Druhé súbežné spustenie sa odmietne zámkom.
+## Správanie okna `sync.cmd`
+
+`sync.cmd` otvorí jedno konzolové okno a nechá ho otvorené počas celého behu:
+
+1. Hneď vypíše „Sťahujem dáta z Garminu…“ a potom priebeh po krokoch, ako ich skript hlási:
+   prihlásenie tokenom, zoznam aktivít, stiahnutie každého FIT (názov a dátum), import,
+   denné zdravotné dáta za posledné dni, záloha a zápis.
+2. Na konci vypíše výsledok jedným riadkom: „HOTOVO: 1 nový beh: 15. 10., 7,0 km“ alebo
+   „HOTOVO: nič nové“.
+3. Pri úspechu počká 3 sekundy a okno sa samo zavrie.
+4. Pri chybe (kód 75, 77 alebo 1) vypíše, čo sa stalo a čo robiť, a okno ostane otvorené,
+   kým ho nezavriem; nič sa neskryje.
+
+Skill „stiahni dáta“ a plánovaná úloha spúšťajú ten istý skript bez okna a čítajú výsledok
+z logu a z `meta`.
+
+Všetky cesty volajú ten istý `sync.cmd` → `cli.py sync`. Druhé súbežné spustenie sa odmietne
+zámkom. Výsledok ide vždy aj do `logs\sync.log` a do `meta` v databáze, takže skill aj okno
+čítajú ten istý stav.
 
 ## Postup jedného behu
 
@@ -20,11 +40,18 @@ Obidva volajú `cli.py sync`. Druhé súbežné spustenie sa odmietne zámkom.
 2. Ak platí cooldown (súbor s časom), skončiť kódom 0 s informáciou.
 3. Prihlásiť sa tokenom (`login(tokenstore)`); knižnica token obnoví sama. Nikdy
    neprihlasovať heslom.
-4. Zoznam aktivít od posledného známeho dátumu (`get_activities_by_date`), filtrovať beh.
+4. Zoznam aktivít od posledného známeho dátumu (`get_activities_by_date`), všetky typy;
+   behy idú do `runs`, ostatné do `activities_other`.
 5. Pre každú novú aktivitu: `download_activity(..., ORIGINAL)` → ZIP → vybrať `.fit` →
    zapísať atomicky do `data/fit/<activity_id>.fit`. Existujúci súbor sa nesťahuje znova.
    Pauza 1 s medzi requestmi.
 6. Zavolať import ([import FIT](fit-import.md)).
+6a. Denné zdravotné dáta za posledné 4 dni: `get_user_summary`, `get_rhr_day`,
+   `get_heart_rates`, `get_sleep_data`, `get_hrv_data`, `get_stress_data`,
+   `get_body_battery`, `get_training_readiness`, `get_training_status`,
+   `get_respiration_data`, `get_spo2_data`, `get_body_composition`; surový JSON do
+   `connect_raw`, normalizované hodnoty do `daily_health` a `body_composition`
+   (prepis, idempotentne). Pauza 1 s medzi requestmi; spolu rádovo 50 requestov.
 7. Zapísať do `meta` čas synchronizácie, do logu súhrn.
 
 ## Chyby a kódy

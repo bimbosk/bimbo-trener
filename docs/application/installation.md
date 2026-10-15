@@ -10,8 +10,8 @@ a návrh.
 - Nainštalovaný a prihlásený Claude Code alebo Codex (aplikácia ChatGPT); inštalátor ich
   neinštaluje.
 - Sync nástroj už synchronizuje priečinok, kde bude dátový adresár.
-- Git, Python ani uv netreba; inštalátor ich pripraví lokálne (alternatívne winget pre
-  Python je otvorené O5).
+- Git, Python ani uv netreba; inštalátor ich pripraví lokálne v priečinku aplikácie
+  ([externé nástroje](external-tools.md)).
 
 ## Spustenie
 
@@ -33,12 +33,14 @@ Windows PowerShell 5.1 s `ExecutionPolicy Bypass` iba pre tento proces. Parametr
    Python 3.14, vytvorí venv a nainštaluje pripnuté balíky zo zámku s hashmi
    ([externé nástroje](external-tools.md)); skopíruje `scripts`. PATH ani registre sa
    nemenia.
-3. **Dátový adresár.** Ak je zadaný alebo uložený v `config\local.json`, použije ho; inak
-   otvorí dialóg výberu priečinka. Priečinok s markerom pripojí (`attach`), prázdny
+3. **Dátový adresár.** Načíta `bimbo-trener.json` a prípadný `bimbo-trener.local.json`;
+   ak cesta existuje, použije ju; inak otvorí dialóg výberu priečinka a vybranú cestu
+   zapíše do miestneho prepisu. Priečinok s markerom pripojí (`attach`), prázdny
    inicializuje (`init`), neprázdny cudzí odmietne.
 4. **Skúška.** Import vzorového FIT súboru z repozitára (syntetický, bez mojich dát) do
    dočasnej databázy; `status` z nainštalovanej kópie.
-5. **Skratka.** „Stiahni dáta z Garminu“ na ploche → `cli.py sync` s oknom so správou.
+5. **Skratka.** „Stiahni dáta z Garminu“ na ploche → kópia `sync.cmd` v aplikácii
+   ([sťahovanie](../coach/garmin-sync.md)).
 6. **MCP registrácia.** `bimbo_trener` (STDIO, absolútne cesty do venv a dátového adresára)
    do `config.toml` Codexu so zálohou a do Claude Code cez `claude mcp add`; evidencia
    v `sprava`.

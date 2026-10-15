@@ -12,8 +12,9 @@ Git, Python ani iné programátorské nástroje nepripravujem.
 
 ## 1. Stiahnem projekt
 
-V PowerShelli v priečinku, kde má projekt byť, vložím blok z koreňového návodu repozitára,
-ktorý nainštaluje Git a stiahne priečinok `bimbo-trener`. Projekt sa tým ešte neinštaluje.
+V PowerShelli v priečinku, kde má projekt byť, vložím blok z návodu `HOW_TO_USE.md`
+v koreni repozitára (vznikne spolu s inštalátorom), ktorý nainštaluje Git a stiahne
+priečinok `bimbo-trener`. Projekt sa tým ešte neinštaluje.
 
 ## 2. Spustím nastavenie
 

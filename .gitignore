@@ -41,3 +41,6 @@ Thumbs.db
 rulesync.local.jsonc
 .rulesync.local/
 .rulesync/rules/*.local.md
+
+# Podklady na analýzu (FIT, exporty, screenshoty) - citlivé dáta, mimo Gitu
+beh/
