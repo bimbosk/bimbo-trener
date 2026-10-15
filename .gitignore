@@ -47,3 +47,10 @@ beh/
 
 # Miestny prepis konfigurácie viazaný na počítač
 bimbo-trener.local.json
+
+# Dáta trénera nikdy nepatria do Gitu (žijú v dátovom adresári)
+*.sqlite3
+*.sqlite3.gz
+*.fit
+*.FIT
+journal-export*.jsonl

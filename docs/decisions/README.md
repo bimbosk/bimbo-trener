@@ -28,6 +28,7 @@ Stav: **platí** · **otvorené** (zatiaľ nerozhodnuté).
 | 15. 10. 2026 | **Sťahuje sa iba originál FIT**; TCX, GPX a CSV exporty nič nepridávajú. Dátový model zachytáva aj zóny, splity a snímku zón a prahov z FIT. | [Import FIT](../coach/fit-import.md) | platí | [dôkaz](../evidence/2026-10-15-fit-file-contents.md) |
 | 15. 10. 2026 | **Sťahovanie spúšťa `sync.cmd`** v koreni repozitára; skratka na ploche, skill „stiahni dáta“ v `.rulesync` aj plánovaná úloha volajú ten istý súbor. | [Sťahovanie](../coach/garmin-sync.md) | platí | — |
 | 15. 10. 2026 | **Konfigurácia v `bimbo-trener.json` v koreni repozitára** (JSON, commitnutý): cesta aplikácie, dátový adresár, databáza, zálohy, sťahovanie. Miestny prepis `bimbo-trener.local.json` mimo Gitu pre odlišnú cestu a zapnuté sťahovanie. | [Dátový adresár](../coach/data-directory.md) | platí | — |
+| 15. 10. 2026 | Závislosť **tomlkit** navyše: inštalátor upravuje `config.toml` Codexu so zachovaním cudzích položiek a komentárov; `tomllib` iba číta. | [Externé nástroje](../application/external-tools.md) | platí | — |
 | 15. 10. 2026 | Dokumentácia v `docs/` je členená na oblasti s rozcestníkmi; každá informácia má jedného vlastníka; píše sa v prvej osobe bez histórie rozhodovania. | [Dokumentácia](../project/documentation.md) | platí | — |
 
 ## Otvorené rozhodnutia

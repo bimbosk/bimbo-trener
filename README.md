@@ -26,9 +26,20 @@ rozcestník oblasti, potom jedna stránka. Stav projektu a najbližšie kroky:
 
 ## Ako s ním pracovať
 
-Otvor session agenta v tomto adresári a píš bežnou rečou, napríklad
-„zapíš dnešný beh…“ alebo „vyhodnoť posledný týždeň“. Bežná práca nepotrebuje
-žiadny režim ani prepínač.
+Otvor session agenta v tomto adresári a píš bežnou rečou, napríklad „ako mi to
+včera išlo“, „daj mi predpis“ alebo „ulož dohodnuté“. Tréner si kontext načíta
+z databázy cez MCP server `bimbo_trener` (skill `coach-session`). Nové dáta
+z Garmin Connect stiahne `sync.cmd` (alebo veta „stiahni dáta“).
+
+## Čo je v repozitári
+
+- `bimbo-trener.json` – konfigurácia (dátový adresár, zálohy, sťahovanie);
+  `bimbo-trener.local.json` je miestny prepis mimo Gitu.
+- `install.cmd`, `sync.cmd`, `uninstall.cmd` – spúšťače pre Windows.
+- `scripts/coach/` – databáza, import FIT, sťahovanie, CLI, MCP server, testy
+  (`pytest scripts/coach/tests`).
+- `scripts/*.ps1`, `scripts/common/`, `scripts/coach/setup.ps1` – inštalátor
+  podľa [aplikácie](docs/application/README.md).
 
 ## Inštrukcie pre agentov
 

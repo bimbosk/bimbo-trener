@@ -26,8 +26,8 @@ prihlásenia a limitov Garminu vlastní [Garmin Connect](../integrations/garmin-
 4. Pri chybe (kód 75, 77 alebo 1) vypíše, čo sa stalo a čo robiť, a okno ostane otvorené,
    kým ho nezavriem; nič sa neskryje.
 
-Skill „stiahni dáta“ a plánovaná úloha spúšťajú ten istý skript bez okna a čítajú výsledok
-z logu a z `meta`.
+Skill „stiahni dáta“ volá MCP `run_sync()`; plánovaná úloha spúšťa `sync.cmd -Quiet` bez čakania.
+Priebeh ide na stderr, výsledok ako JSON na stdout; `scripts\sync.ps1` ukáže oboje a JSON prečíta.
 
 Všetky cesty volajú ten istý `sync.cmd` → `cli.py sync`. Druhé súbežné spustenie sa odmietne
 zámkom. Výsledok ide vždy aj do `logs\sync.log` a do `meta` v databáze, takže skill aj okno

@@ -14,10 +14,12 @@ a menia sa vedome ([aktualizácia](update-and-uninstall.md)); prečo práve tiet
 | garminconnect | 0.3.18 | `runtime\venv`; prihlásenie a sťahovanie FIT |
 | curl_cffi | 0.16.3 | `runtime\venv`; TLS odtlačok prehliadača pre prihlásenie; wheel `cp310-abi3-win_amd64` |
 | garmin-fit-sdk | 21.218.0 | `runtime\venv`; parsovanie FIT; čistý Python |
-| mcp | podľa zámku v čase implementácie | `runtime\venv`; MCP server |
+| mcp | 2.3.0 | `runtime\venv`; MCP server (API `mcp.server.mcpserver.MCPServer`) |
+| tomlkit | 0.13.3 | `runtime\venv`; úprava `config.toml` Codexu so zachovaním cudzích položiek |
 
-Zámok `scripts/requirements.lock` s hashmi, generovaný pre `win_amd64`/cp314; inštalácia
-`uv pip install --require-hashes`.
+Zámok `scripts/requirements.lock` s hashmi (37 balíkov vrátane tranzitívnych), generovaný
+`scripts/tools/make_lock.py` zo stiahnutých wheelov pre `win_amd64`/CPython 3.14; inštalácia
+`uv pip install --require-hashes --no-deps -r scripts/requirements.lock`.
 
 ## Vonkajšie vedľajšie účinky
 

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "install_root": "../bimbo-trener-app",
+  "data_dir": "D:\\Sync\\Bimbo-data",
+  "database": "runs.sqlite3",
+  "fit_dir": "fit",
+  "backups": { "keep": 5 },
+  "sync": { "health_days": 4, "cooldown_minutes": 90, "daily_task_time": "07:30", "request_pause_seconds": 1.0 },
+  "garmin": { "token_dir": "<app>/config/garmin" }
+}

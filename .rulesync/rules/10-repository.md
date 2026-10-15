@@ -53,6 +53,13 @@ súborov a adresárov píš po anglicky.
 - **Úprimný report.** Uveď výsledok, vykonané kontroly, obmedzenia a otvorené
   rozhodnutia.
 
+## Tréner
+
+Rozhovor o mojich behoch, pocitoch, predpisoch alebo pláne veď skillom
+`coach-session`: na začiatku načítaj kontext z databázy, počas rozhovoru
+zapisuj dohodnuté hneď a na konci ulož závery. K databáze pristupuj iba cez
+MCP server `bimbo_trener`; namerané dáta nemeň.
+
 ## Inštrukcie agentov
 
 Meň ich iba na výslovnú žiadosť vlastníka, výhradne v `.rulesync/` a

@@ -12,12 +12,12 @@ Schéma SQLite v dátovom adresári. Jediný vlastník všetkých zapisovaných 
 | --- | --- | --- |
 | `runs` | jeden riadok na aktivitu: identifikátor Garmin, čas štartu (lokálny aj UTC), šport, miesto (pás/vonku z FIT `sub_sport`), vzdialenosť, celkový čas, čas pohybu, uplynutý čas, priemerné a najlepšie tempo, tep priemer/max, výkon priemer/max, `normalized_power`, `total_work`, `total_strides`, kadencia priemer/max, dĺžka kroku, vertikálny pomer, oscilácia, kontakt so zemou, Training Effect aeróbny/anaeróbny, `training_load_peak`, kalórie, zariadenie a firmvér, cesta k FIT, zdroj (`garmin_sync`, `manual_fit`), čas importu | `activity_id` |
 | `laps` | kolá z FIT (hodinky ich robia každý kilometer): poradie, spúšťač, začiatok, trvanie, vzdialenosť, rýchlosť, tep priemer/max, kadencia, výkon, NP, dynamika behu | `activity_id`, `lap_index` |
-| `records` | sekundové záznamy: čas, vzdialenosť, rýchlosť, tep, kadencia, výkon, kumulovaný výkon, oscilácia, pomer, dĺžka kroku, kontakt so zemou | `activity_id`, `timestamp` |
+| `records` | sekundové záznamy: poradie `seq`, čas, vzdialenosť, rýchlosť, tep, kadencia, výkon, kumulovaný výkon, oscilácia, pomer, dĺžka kroku, kontakt so zemou, poloha a výška (vonku) | `activity_id`, `seq` |
 | `events` | pauzy, zmeny (FIT `event`): typ, čas | `activity_id`, `timestamp` |
 | `time_in_zone` | čas v tepových a výkonových zónach za session a za každé kolo, s hranicami zón | `activity_id`, `reference` (session/lap), `index` |
 | `splits` | Garminovo rozpoznanie beh / chôdza / státie: typ, začiatok, trvanie, vzdialenosť, tep | `activity_id`, `split_index` |
 | `zone_snapshot` | max tep, pokojový tep, prahový tep, FTP a hranice zón platné v deň behu (z `time_in_zone` a `zones_target`) | `activity_id` |
-| `fit_raw` | nepomenované správy FIT (číselné ID) ako surové hodnoty | `activity_id`, `mesg_num`, `index` |
+| `fit_raw` | všetko ostatné z FIT ako JSON: nemapované známe správy (`file_id`, `device_info`, `sport`, `user_profile`, `zones_target`, `device_settings`, `battery`, …), nepomenované správy (číselné ID) a neznáme polia mapovaných správ (`<správa>.unknown_fields`); pri iných športoch aj `record`/`lap` | `activity_id`, `mesg_name`, `mesg_index` |
 | `activities_other` | aktivity iného typu než beh (jazdy z Edge 1040, chôdza, …): súhrn zo session + cesta k FIT; bez `laps`/`records`, kým nie sú potrebné | `activity_id` |
 
 ### Denné zdravotné dáta (z Garmin Connect, prepisujú sa za posledné 4 dni)
