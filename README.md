@@ -5,6 +5,14 @@ Ukladá moje behy, analyzuje ich a pomáha s plánovaním tréningu. Nejde o
 softvérový projekt. Kód (napr. SQLite databáza alebo Python skripty) pribudne
 iba vtedy, keď ho ukladanie alebo analýza behov reálne potrebuje.
 
+## Dokumentácia
+
+Čo má projekt byť a ako má fungovať, je zapísané v `docs/`: vstupom je
+[mapa dokumentácie](docs/DOCUMENTATION_MAP.md) (téma → jediný vlastník), potom
+rozcestník oblasti, potom jedna stránka. Stav projektu a najbližšie kroky:
+[stav](docs/project/status.md); rozhodnutia vlastníka:
+[register](docs/decisions/README.md).
+
 ## Ako s ním pracovať
 
 Otvor session agenta v tomto adresári a píš bežnou rečou, napríklad
